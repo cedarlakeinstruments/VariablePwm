@@ -102,7 +102,11 @@ void SetFrequency(uint8_t frequency)
 void InitializePwm()
 {
     // Set pin 9 as output for PWM OC
+    // Mega328
     DDRB |= (1 << PINB1);
+    // Setting for 32U4
+    DDRB |= (1 << PINB5);
+    
     // Mode: Fast PWM top=ICR1
     // OC1A output: Non-Inverted PWM
     // OC1B output: Non-Inverted PWM
